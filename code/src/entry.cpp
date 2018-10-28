@@ -10,6 +10,7 @@ entry::entry()
 void entry::clear()
 {
     identified = 0;
+    nInvalid = 0;
     first_isvalid = false;
     account_first.clear();
     account_maybe.clear();
@@ -75,7 +76,7 @@ void entry::get_account_first(digits account_digits[NUM_OF_DIGITS_IN_THE_ACCOUNT
 void entry::get_account_maybe(digits account_digits[NUM_OF_DIGITS_IN_THE_ACCOUNT_M])
 {
     int nDigits[NUM_OF_DIGITS_IN_THE_ACCOUNT_M] = {0};
-    int nInvalid = 0, indexOfInvalid = 0;
+    int indexOfInvalid = 0;
 
     for(int i = 0; i < NUM_OF_DIGITS_IN_THE_ACCOUNT_M; i++)
     {
@@ -150,7 +151,7 @@ void entry::show()
 {
     if(0 == account_maybe.size())
     {
-        printf("%s%s\n",account_first.c_str(),first_isvalid?"":" ILL");
+        printf("%s%s\n",account_first.c_str(),(nInvalid>0)?" ILL":(first_isvalid?"":" ERR"));
     }
     else
     {

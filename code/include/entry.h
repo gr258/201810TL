@@ -32,6 +32,7 @@ private:
     void        get_account_maybe(digits account_digits[NUM_OF_DIGITS_IN_THE_ACCOUNT_M]);
     
     int         identified;
+    int         nInvalid;
     string      string_raw[NUM_OF_RAW_IN_THE_DIGIT_M];
     string      account_first;
     bool        first_isvalid;

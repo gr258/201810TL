@@ -22,7 +22,7 @@ TEST(READER,GIVEN_ONE_ENTRY_WITHOUT_ERROR_WHEN_READ_THEN_IDENTIFY_IS_MAYBE)
     r.show();
 }
 
-//µ±³ö´íÎ»ÖÃÈ·¶¨Ê±£¬¸ù¾ÝchecksumËã·¨£¬½ö´æÔÚÒ»¸öÓÐÐ§¼ìÑéºÍ£¬´ËÓÃÀýÎÞÐ§
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î»ï¿½ï¿½È·ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½checksumï¿½ã·¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½ï¿½ï¿½Í£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð§
 //TEST(READER,GIVEN_ONE_ENTRY_WITH_ERROR_WHEN_READ_THEN_IDENTIFY_IS_MAYBE)
 //{
 //    reader r((char*)"../test/file/entry_with_error_read_maybe.txt");
@@ -30,13 +30,12 @@ TEST(READER,GIVEN_ONE_ENTRY_WITHOUT_ERROR_WHEN_READ_THEN_IDENTIFY_IS_MAYBE)
 //    r.show();
 //}
 
-//
-//TEST(READER,GIVEN_ONE_ENTRY_WITHOUT_ERROR_WHEN_READ_THEN_IDENTIFY_IS_ERROR)
-//{
-//    reader r((char*)"../test/file/entry_without_error_read_error.txt");
-//
-//    r.show();
-//}
+TEST(READER,GIVEN_ONE_ENTRY_WITHOUT_ERROR_WHEN_READ_THEN_IDENTIFY_IS_ERROR)
+{
+    reader r((char*)"../test/file/entry_without_error_read_error.txt");
+
+    r.show();
+}
 
 TEST(READER,GIVEN_ONE_ENTRY_WITH_ERROR_WHEN_READ_THEN_IDENTIFY_IS_ILLEGAL)
 {
