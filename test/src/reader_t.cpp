@@ -51,4 +51,9 @@ TEST(READER,GIVEN_MORE_ENTRY_WHEN_READ_THEN_IDENTIFY_IS_VALID)
     r.show();
 }
 
+TEST(READER,GIVEN_MORE_ENTRY_ORIGIN_WHEN_READ_THEN_IDENTIFY_IS_VALID)
+{
+    reader r((char*)"../test/file/example_all_origin.txt");
 
+    r.show();
+}

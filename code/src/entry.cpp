@@ -32,11 +32,21 @@ int entry::addline(char *line, int len, int linenum)
 
 int entry::addraw(char *line, int len, int raw)
 {
-    if(len < ENTRY_COLUM_NUM_M)
-    {
-        return 1;
-    }
     string_raw[raw] = line;
+    int nPos = string_raw[raw].find('\r',0);
+    if (nPos != string::npos)
+    {
+        string_raw[raw].erase(nPos);
+    }
+    nPos = string_raw[raw].find('\n',0);
+    if (nPos != string::npos)
+    {
+        string_raw[raw].erase(nPos);
+    }
+    if(string_raw[raw].size() < ENTRY_COLUM_NUM_M)
+    {
+        string_raw[raw].append(ENTRY_COLUM_NUM_M-string_raw[raw].size(), ' ');
+    }
     return 0;
 }
 
