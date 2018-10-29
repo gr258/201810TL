@@ -30,7 +30,7 @@ TEST(DIGITS,GIVEN_STRNG_0_WHEN_COMPARE_WITH_INT_0_THEN_EQUAL)
 
     digits d(str);
     EXPECT_EQ(true,d.isvalid());
-    EXPECT_EQ(0,d.get_first());
+    EXPECT_EQ(0,d.get_int());
 }
 
 TEST(DIGITS,GIVEN_STRNG_1_WHEN_COMPARE_WITH_INT_1_THEN_EQUAL)
@@ -41,7 +41,7 @@ TEST(DIGITS,GIVEN_STRNG_1_WHEN_COMPARE_WITH_INT_1_THEN_EQUAL)
 
     digits d(str);
     EXPECT_EQ(true,d.isvalid());
-    EXPECT_EQ(1,d.get_first());
+    EXPECT_EQ(1,d.get_int());
 }
 
 TEST(DIGITS,GIVEN_STRNG_2_WHEN_COMPARE_WITH_INT_1_THEN_NOT_EQUAL)
@@ -52,7 +52,7 @@ TEST(DIGITS,GIVEN_STRNG_2_WHEN_COMPARE_WITH_INT_1_THEN_NOT_EQUAL)
 
     digits d(str);
     EXPECT_EQ(true,d.isvalid());
-    EXPECT_NE(1,d.get_first());
+    EXPECT_NE(1,d.get_int());
 }
 
 TEST(DIGITS,GIVEN_STRNG_9_WHEN_COMPARE_WITH_INT_8_THEN_MAYBE_TRUE)
@@ -63,7 +63,7 @@ TEST(DIGITS,GIVEN_STRNG_9_WHEN_COMPARE_WITH_INT_8_THEN_MAYBE_TRUE)
 
     digits d(str);
     EXPECT_EQ(true,d.isvalid());
-    EXPECT_EQ(9,d.get_first());
+    EXPECT_EQ(9,d.get_int());
     EXPECT_EQ(true,d.maybe(8));
 }
 
@@ -76,7 +76,7 @@ TEST(DIGITS,GIVEN_STRNG_0_WHEN_COMPARE_WITH_INT_8_THEN_MAYBE_TRUE)
     digits d(str);
     d.identify(str);
     EXPECT_EQ(true,d.isvalid());
-    EXPECT_EQ(0,d.get_first());
+    EXPECT_EQ(0,d.get_int());
     EXPECT_EQ(true,d.maybe(8));
 }
 
@@ -89,7 +89,7 @@ TEST(DIGITS,GIVEN_STRNG_1_WHEN_COMPARE_WITH_INT_7_THEN_MAYBE_TRUE)
     digits d(str);
     d.identify(str);
     EXPECT_EQ(true,d.isvalid());
-    EXPECT_EQ(1,d.get_first());
+    EXPECT_EQ(1,d.get_int());
     EXPECT_EQ(true,d.maybe(7));
 }
 
@@ -102,7 +102,7 @@ TEST(DIGITS,GIVEN_STRNG_5_WHEN_COMPARE_WITH_INT_9_OR_6_THEN_MAYBE_TRUE)
     digits d(str);
     d.identify(str);
     EXPECT_EQ(true,d.isvalid());
-    EXPECT_EQ(5,d.get_first());
+    EXPECT_EQ(5,d.get_int());
     EXPECT_EQ(true,d.maybe(9));
     EXPECT_EQ(true,d.maybe(6));
 }
@@ -115,7 +115,7 @@ TEST(DIGITS,GIVEN_STRNG_9_WHEN_COMPARE_WITH_INT_7_THEN_MAYBE_FALSE)
 
     digits d(str);
     EXPECT_EQ(true,d.isvalid());
-    EXPECT_EQ(9,d.get_first());
+    EXPECT_EQ(9,d.get_int());
     EXPECT_NE(true,d.maybe(7));
 }
 

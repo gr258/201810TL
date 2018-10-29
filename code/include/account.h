@@ -1,7 +1,6 @@
 #ifndef INCLUDE_ACCOUNT_H
 #define INCLUDE_ACCOUNT_H
 
-#include <list>
 #include <string>
 
 using namespace std;

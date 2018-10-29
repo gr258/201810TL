@@ -8,7 +8,6 @@ entry::entry()
 void entry::clear()
 {
     identified = 0;
-    da.clear();
 }
 
 int entry::addline(char *line, int len, int linenum)
@@ -42,23 +41,10 @@ int entry::line_to_rows(char *line, int len, int row)
 
 int entry::identify()
 {
-    rows_to_da();
+    da.init(rows);
     da.identify();
     identified = 1;
     return 0;
-}
-
-void entry::rows_to_da()
-{
-    for(int i = 0; i < NUM_OF_DIGITS_IN_THE_ACCOUNT_M; i++)
-    {
-        string strTemp = 
-            string(rows[0], i*NUM_OF_COLUM_IN_THE_DIGIT_M, NUM_OF_COLUM_IN_THE_DIGIT_M) + 
-            string(rows[1], i*NUM_OF_COLUM_IN_THE_DIGIT_M, NUM_OF_COLUM_IN_THE_DIGIT_M) + 
-            string(rows[2], i*NUM_OF_COLUM_IN_THE_DIGIT_M, NUM_OF_COLUM_IN_THE_DIGIT_M);
-
-        da.string_to_digits(strTemp,i);
-    }
 }
 
 int entry::isdone()
@@ -70,3 +56,4 @@ void entry::show()
 {
     da.show();
 }
+

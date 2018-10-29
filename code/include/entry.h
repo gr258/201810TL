@@ -2,7 +2,7 @@
 #define INCLUDE_ENTRY_H
 
 #include <string>
-#include "digits.h"
+#include "digits_account.h"
 
 using namespace std;
 
@@ -21,7 +21,6 @@ public:
 private:
     int             identify();
     int             line_to_rows(char *line, int len, int row);
-    void            rows_to_da();
     
     int             identified;
     string          rows[NUM_OF_ROW_IN_THE_DIGIT_M];
